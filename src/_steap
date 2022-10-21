@@ -1,0 +1,93 @@
+/*
+basic prohect  setup 
+1. create firebase app 
+2. get firebase configuration inside firebase.confiz.js
+3. make  sure to export  app form  firebase confiz 
+3. create a react  app 
+4. install firebase and react router dom
+5. install and react boostrap  
+6. make sure to import boostrap css in the index.js file 
+*/
+
+/*
+router setup 
+1.
+*/
+
+server er data load 
+steap1. express  website  যেতে হবে 
+একটি ফাইল সেভ করতে 
+index.js
+ ২। init y  দিতে হবে ইন্সটল করতে হবে 
+ ৩| তারপর সারভের ডাটা লোড করা জন্য  nodemon index.js dete hbe 
+ 4. react er icon install krar  করা  করতে  তারপর ব্যবহার করতে 
+ ৫।  nav var react er 
+
+// privateRoute
+
+// 1. only  allow authenticated user to visite  to go  before login
+// 
+// 3. Redire user to the  router they wanted to go before login
+//  কিছু শর্ত বব্যহার করতে হবে যেমন ইঊজার না  থাকে  তাহলো অন রাঊটে যাবে 
+// ইমেইল ভেরিফাই  করা  জন্য  const verifay  email ke  return  করে দিতে হবে  তারপর সবাই রাঊটে বব্যহার করা জন্য  আউথ te verifay click krte hbe  তারপর ইমেইল ভেরিফাই হলে নাম ওয়রাঙ্গি   tosat dibe
+ আর  vaile email hle success  toast  debe 
+ 62-6 (Optional) Update username photUR with useRef
+   করা জন্য  এই কোড গুলো বব্যহার করতে হবে 
+
+   import React, { useContext, useRef, useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { AuthContext } from '../Context/AuthProvider';
+
+const Profile = () => {
+   const  {user}  = useContext(AuthContext);
+   const {name,setName} = useState(user.displayName);
+   const photoURLRef = useRef(user.photoURL)
+   
+   const handleSubmit = event =>{
+    event.preventDefault()
+    console.log(photoURLRef.current.value);
+
+  
+   }
+   const handleNameChange = event =>{
+    setName(event.target.value)
+   }
+
+    return (
+        <div>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control readOnly defaultValue={user?.email} type="email" name="email"placeholder="Enter email" />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Your Name</Form.Label>
+                    <Form.Control onChange={handleNameChange} defaultValue={name} type="text" name="name" placeholder="name" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Photo URL</Form.Label>
+                    <Form.Control ref={ photoURLRef} defaultValue={user?.photoURL} type="text" name="name" placeholder="photo url" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                    <Form.Check type="checkbox" label="Check me out" />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>
+            </Form>
+
+        </div>
+    );
+};
+
+export default Profile;
+
+
+
+2-7 (optional) Environment variable for Firebase in Create React App
+
+
+
+// 

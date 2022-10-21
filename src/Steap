@@ -1,0 +1,5 @@
+Authcation  করা জন্য  প্রথমে  const authcontext createContext 
+করতে হবে 
+তারপর (authContext.Provider) return   করতে হবে 
+তারপর children টা বব্যহার  করতে হবে 
+email verift   করা  জন্য  const  
